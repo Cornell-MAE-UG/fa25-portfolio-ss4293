@@ -21,8 +21,7 @@ The actuator was selected from the catalog by considering the listed stroke leng
 
 The length of the rigid bar was chosen to be 1580 mm because this is the maximum possible length the bar can be and still fit within the 150 cm x 50 cm design space. The bar will be along the diagonal of the design space at a starting angle of 18.3 degrees.
 
-<img src="/assets/images/actuator-design-sketch.jpg" alt="Design Sketch" width="600"/>
-
+<img src= "/fa25-portfolio-ss4293/assets/images/actuator-design-sketch.jpg" alt="Design Sketch" width="600"/>
 
 The image shows the sketch of the design. P1 and P2 are the 2 ground support pins. P1 is attached to the bar and is the point about which the bar rotates when pushed by the linear actuator. P2 is the pin that attaches the linear actuator to the ground. P3 is the pin that connects the tip of the linear actuator to some point on the rigid bar. P1 is located at one end of the bar. 
 
