@@ -13,7 +13,7 @@ title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : Sajni Shah
 description              : Sajni Shah - Projects and CV 
-baseurl                  : "" # Set this to your repo name 
+baseurl                  : "/fa25-portfolio-ss4293" # Set this to your repo name 
 
 # Theme and Style
 theme: jekyll-theme-minimal
