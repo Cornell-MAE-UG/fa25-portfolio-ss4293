@@ -8,11 +8,11 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : Your Name
+title                    : Sajni Shah Portfolio
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
-name                     : Your Name
-description              : Your Name - Projects and CV 
+name                     : Sajni Shah
+description              : Sajni Shah - Projects and CV 
 baseurl                  : "" # Set this to your repo name 
 
 # Theme and Style
