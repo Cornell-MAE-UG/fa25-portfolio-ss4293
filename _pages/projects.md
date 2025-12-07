@@ -4,6 +4,23 @@ title: Sajni Shah - Portfolio
 permalink: /projects/
 ---
 
+<!-- MathJax for rendering LaTeX in Markdown -->
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['noscript', 'style', 'textarea', 'pre', 'code']
+    }
+  };
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
 <style>
   /* Page-local styles (no global CSS changes) */
   .project-gallery{
@@ -20,22 +37,6 @@ permalink: /projects/
   .gallery-item p{ margin-top:.5rem; font-weight:400; }
 
 </style>
-
-<!-- MathJax for rendering LaTeX in Markdown -->
-<script>
-  MathJax = {
-    tex: {
-      inlineMath: [['$', '$'], ['\\(', '\\)']],
-      displayMath: [['$$', '$$'], ['\\[', '\\]']],
-      processEscapes: true
-    },
-    options: {
-      skipHtmlTags: ['noscript', 'style', 'textarea', 'pre', 'code']
-    }
-  };
-</script>
-<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
 
 <div class="project-gallery">
   {% for project in site.projects %}
