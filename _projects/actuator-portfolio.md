@@ -6,14 +6,14 @@ technologies: [Python]
 image: /assets/images/actuator-design-sketch.jpg
 ---
 
-## Part 1 - Rigid Beam
+### Part 1 - Rigid Beam
 
 In Homework 4 of ENGRD 2020 (Statics and Mechanics of Solids), I completed an assignment focusing on designing a lever-based lifting mechanism within a constrained **150 cm × 50 cm** 2D design space. Within this space, we had to design the system using only **three pins** (two of which are ground supports), a linear actuator from the given [Tolomatic catalog](https://www.tolomatic.com/wp-content/uploads/2022/05/2700-4000_29_IMA_cat.pdf), and a **rigid bar** of any fixed length. 
 
 
 This project demonstrates how principles of statics and mechanics can be combined with computational optimization to design a constrained lever-actuator system. By systematically analyzing forces, geometry, and actuator specifications, I optimized pin placements and bar length to achieve maximum lifting height and payload within the design space.
 
-### Problem Definition
+#### Problem Definition
 
 Design a lever–actuator mechanism that operates entirely within a **150 cm × 50 cm** rectangular workspace and can lift the **maximum payload** to the **highest possible tip height**.  
 
@@ -22,7 +22,7 @@ The design must use:
 - **Three pin joints**, two of which are fixed to the ground (P1, P2)
 - A **linear actuator** from the Tolomatic catalog (using maximum thrust).
 
-### Constraints and Objectives
+#### Constraints and Objectives
 
 | Category | Description |
 |-----------|--------------|
@@ -31,7 +31,7 @@ The design must use:
 | **Mechanical Constraints** | All members are rigid; pin joints are frictionless. The actuator can only push/pull along its axis. |
 | **Performance Objective** | Maximize W = F x d (force exerted by actuator and vertical lift height). |
 
-### Design Degrees of Freedom (DoF)
+#### Design Degrees of Freedom (DoF)
 
 1. L<sub>bar</sub>: bar length
 2. x = P1-P2: ground-pin spacing (actuator base position).  
@@ -51,7 +51,7 @@ The length of the rigid bar was chosen to be 1580 mm because this is the maximum
 
 The image shows the sketch of the design. P1 and P2 are the 2 ground support pins. P1 is attached to the bar and is the point about which the bar rotates when pushed by the linear actuator. P2 is the pin that attaches the linear actuator to the ground. P3 is the pin that connects the tip of the linear actuator to some point on the rigid bar. P1 is located at one end of the bar. 
 
-### Statics & Kinetmatics Analysis
+#### Statics & Kinetmatics Analysis
 
 To determine the distance between P1 and P2 and between P1 and P3, the work done by the actuator (W = F x d) will be maximized. The force done by the actuator will be determined by taking the moment about P1. This will include the force exerted by the payload and the force exerted by the actuator about P1. The force exerted by the actuator is the same as the peak thrust value listed in the catalog. d, the vertical distance the tip of the rigid bar moves, is determined by using the Law of Cosines to find the angle, theta, the bar moves and its final height. 
 
@@ -212,7 +212,7 @@ Running the code allows you to determine that the distance from P1 and P2 (denot
 
 These values allow the bar to lift a maximum load of 23.57 kN to a final height of about 1100 mm. 
 
-#### Key Results:
+##### Key Results:
 - Pin Distances: P1–P2 ≈ 1040 mm, P1–P3 ≈ 1040 mm
 - Maximum Payload: 23.57 kN
 - Final Lift Height: ≈ 1100 mm
@@ -220,11 +220,11 @@ These values allow the bar to lift a maximum load of 23.57 kN to a final height 
 
 The system is very sensitive to the placement of the pins. Small variations in distances between P1, P2, and P3 can cause the actuator to exceed stroke limits or drastically reduce payload. The final design represents an optimized balance that achieves substantial lift capacity and significant height gain.
 
-## Part 2 - Flexible Beam (Deflection and Sizing)
+### Part 2 - Flexible Beam
 
 In this part, we are reconsidering the problem from the original assignment. The rigid bar is now treated as a **beam** that bends under the transverse components of the actuator and payload forces.
 
-### Assumptions and Setup
+#### Assumptions and Setup
 
 - Linear-elastic, small-deflection (Euler–Bernoulli).  
 - Critical position near $\theta_{min}=18.3°$.  
@@ -241,7 +241,7 @@ $F_\perp=F_a\sin{\alpha}$ → $F_\perp≈33.6 \text{kN}$
 
 ---
 
-### Tip Deflection
+#### Tip Deflection
 
 For a cantilever:
 
@@ -275,7 +275,7 @@ $\delta_{tip} = \dfrac{K}{E I} \approx \dfrac{5.19\times10^{4}}{(70\times10^{9})
 
 ---
 
-### Mass-Efficient Beam Design
+#### Mass-Efficient Beam Design
 
 For a square tube: $I=(b^4-(b-2t)^4)/12$, $A=b^2-(b-2t)^2$, mass per length $m'=\rho A$.
 
@@ -311,7 +311,7 @@ $m'=\rho A≈2710×0.0028≈7.6 \text{kg/m}$
 
 ---
 
-### Stress Check
+#### Stress Check
 
 $M_{max} \approx W_\perp L + F_\perp (L - a) \approx 53.5~\text{kN}\cdot\text{m}$
 
@@ -324,7 +324,7 @@ $\sigma_{max}<\sigma_y(6061\text{-T6})=240~\text{MPa}$ → **Safe.**
 
 ---
 
-### Final Design Summary
+#### Final Design Summary
 
 - Beam material: **Aluminum 6061-T6** square tube 250×250×2.8 mm, $L=1.58 \text{m}$  
 - Deflection: ≈ 25–26 mm (< 2% limit)  
@@ -341,7 +341,6 @@ The image shows a schematic (not drawn to scale) of the deflected beam as well a
 
 ---
 
-### Interpretation
 The rigid-bar optimization (Step 1) defined the geometry for maximum lift and payload;  
 the beam analysis (Step 2) ensured the structure remains stiff and safe under load while minimizing mass.  
 Within the materials listed in the reference tables, **Aluminum 6061-T6** provides the optimal balance of weight, stiffness, and manufacturability for this actuator-driven lifting mechanism.
