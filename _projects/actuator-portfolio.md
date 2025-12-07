@@ -337,8 +337,7 @@ $\sigma_{max}<\sigma_y(6061\text{-T6})=240~\text{MPa}$ → **Safe.**
 
 The image shows a schematic (not drawn to scale) of the deflected beam as well as a cross-section of the beam being used.
 
-<img src="{{ "/assets/images/flexible-actuator.jpg" | relative_url }}" alt="Design Sketch with Cross-Section" width="600">
-
+<img src="{{ "assets/images/flexible-actuator.png" | relative_url }}" alt="Design Sketch with Cross-Section" width="600">
 
 ---
 
