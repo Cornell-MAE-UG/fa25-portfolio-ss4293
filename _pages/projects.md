@@ -18,7 +18,24 @@ permalink: /projects/
   .gallery-item a{ display:block; text-decoration:none; color:inherit; }
   .gallery-item img{ display:block; width:100%; height:auto; border-radius:10px; }
   .gallery-item p{ margin-top:.5rem; font-weight:400; }
+
 </style>
+
+<!-- MathJax for rendering LaTeX in Markdown -->
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      processEscapes: true
+    },
+    options: {
+      skipHtmlTags: ['noscript', 'style', 'textarea', 'pre', 'code']
+    }
+  };
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
 
 <div class="project-gallery">
   {% for project in site.projects %}
