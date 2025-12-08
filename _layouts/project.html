@@ -1,6 +1,7 @@
 ---
 layout: default
 ---
+{% include mathjax.html %}
 
 <h1>{{ page.title }}</h1>
 
@@ -13,18 +14,3 @@ layout: default
 <a href={{ "/projects/" | relative_url }} class="back-arrow">
     <i class="bi bi-arrow-left-circle-fill"></i> Back to Projects
 </a>
-<!-- MathJax for rendering LaTeX in Markdown -->
-<script>
-  MathJax = {
-    tex: {
-      inlineMath: [['$', '$'], ['\\(', '\\)']],
-      displayMath: [['$$', '$$'], ['\\[', '\\]']],
-      processEscapes: true,
-      processEnvironments: true
-    },
-    options: {
-      skipHtmlTags: ['noscript', 'style', 'textarea', 'pre', 'code']
-    }
-  };
-</script>
-<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
